@@ -1,15 +1,13 @@
 from bs4 import BeautifulSoup
 from cStringIO import StringIO
-from datetime import datetime
 from healthtools.config import AWS
 import requests
 import boto3
 import re
 import json
-import hashlib
 
 
-class BrandNamesScraper(object):
+class MedBrandNamesScraper(object):
     def __init__(self):
         self.batch_to_scrape = None
         self.site_url = "http://rxnigeria.com/en/items?start={}"

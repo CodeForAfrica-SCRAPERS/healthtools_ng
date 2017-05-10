@@ -1,6 +1,6 @@
-from healthtools.scrapers.brand_names import BrandNamesScraper
+from healthtools.scrapers.med_brand_names import MedBrandNamesScraper
 
 
 if __name__ == "__main__":
-    brand_names_scraper = BrandNamesScraper()
-    brand_names_scraper.scrape_site()
+    med_brand_names_scraper = MedBrandNamesScraper()
+    med_brand_names_scraper.scrape_site()

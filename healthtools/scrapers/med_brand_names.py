@@ -14,7 +14,7 @@ class MedBrandNamesScraper(object):
         self.fields = ["brand_names", "active_ingredient",
                        "theraputic_class", "company_name", "id"
                        ]
-        self.s3_key = "data/brand_names.json"
+        self.s3_key = "data/med_brand_names.json"
         self.retries = 0
         self.s3 = boto3.client("s3", **{
             "aws_access_key_id": AWS["aws_access_key_id"],

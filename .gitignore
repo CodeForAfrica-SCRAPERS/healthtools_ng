@@ -1,2 +1,4 @@
 *.pyc
 .env
+medprices_ext.json
+brand_names_extended.json

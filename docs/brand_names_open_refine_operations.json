@@ -1,0 +1,68 @@
+[
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column _ - _ - active_ingredient",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "_ - _ - active_ingredient",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "Amoxycillin. See Amoxicillin"
+        ],
+        "to": "Amoxycillin"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column _ - _ - active_ingredient",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "_ - _ - active_ingredient",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "Amoxycillin"
+        ],
+        "to": "Amoxicillin"
+      }
+    ]
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - _ - active_ingredient using expression jython:if \"See\" in value or \"see\" in value: \n    name = value.split(\"See\")[-1].strip()\n    if (\"Sulfameth\" in value and \"Trimeth\" in value) or (\"fumarate\" in value) or (\"sulfate\" in value):\n        name = value.split(\"See\")[0].strip()\n    return name \nelse: \n    return value",
+    "engineConfig": {
+      "mode": "record-based",
+      "facets": []
+    },
+    "columnName": "_ - _ - active_ingredient",
+    "expression": "jython:if \"See\" in value or \"see\" in value: \n    name = value.split(\"See\")[-1].strip()\n    if (\"Sulfameth\" in value and \"Trimeth\" in value) or (\"fumarate\" in value) or (\"sulfate\" in value):\n        name = value.split(\"See\")[0].strip()\n    return name \nelse: \n    return value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - _ - active_ingredient using expression jython:if \"plus\" in value:\n    value = value.replace(\" plus \", \"+\")\nreturn value",
+    "engineConfig": {
+      "mode": "record-based",
+      "facets": []
+    },
+    "columnName": "_ - _ - active_ingredient",
+    "expression": "jython:if \"plus\" in value:\n    value = value.replace(\" plus \", \"+\")\nreturn value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  }
+]
